@@ -1,0 +1,28 @@
+.btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  margin: 0.5rem;
+  color: white;
+  font-weight: bold;
+  outline: none;
+}
+.btn:hover {
+  cursor: pointer;
+}
+
+.primary {
+  background-color: dodgerblue;
+}
+.secondary {
+  background-color: rgb(45, 175, 45);
+}
+.warning {
+  background-color: rgb(175, 175, 18);
+}
+.danger {
+  background-color: tomato;
+}
+.other {
+  background-color: #333;
+}
