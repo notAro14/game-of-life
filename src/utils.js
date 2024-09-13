@@ -1,4 +1,4 @@
-import produce from "immer";
+import { produce } from "immer";
 
 export const generate2DArray = (numRow, numCol, isEmpty) => {
   const arr = [];

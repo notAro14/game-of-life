@@ -1,8 +1,7 @@
 import React, { useState, useCallback, useRef, useEffect } from "react";
-import produce from "immer";
-import { generate2DArray, processNextGeneration } from "../../utils/index";
-import Button from "../Button/Button";
-import "./App.css";
+import { produce } from "immer";
+import { generate2DArray, processNextGeneration } from "../utils";
+import Button from "./Button";
 
 function App() {
   const [grid, setGrid] = useState([]);
@@ -44,15 +43,6 @@ function App() {
         </Button>
 
         <Button
-          variant="danger"
-          handleClick={() => {
-            setRunning(false);
-            runningRef.current = false;
-          }}
-        >
-          Stop
-        </Button>
-        <Button
           handleClick={() => {
             setGrid(generate2DArray(gridSize.row, gridSize.col, false));
           }}
@@ -64,9 +54,18 @@ function App() {
           handleClick={() => {
             setGrid(generate2DArray(gridSize.row, gridSize.col, true));
           }}
-          variant="warning"
+          variant="secondary"
         >
           Clear
+        </Button>
+        <Button
+          variant="danger"
+          handleClick={() => {
+            setRunning(false);
+            runningRef.current = false;
+          }}
+        >
+          Stop
         </Button>
       </div>
       <div style={{ display: "flex" }}>
@@ -111,6 +110,7 @@ function App() {
         style={{
           display: "grid",
           gridTemplateColumns: `repeat(${gridSize.col}, 15px)`,
+          border: "1px solid var(--border)",
         }}
       >
         {grid.map((row, i) => {

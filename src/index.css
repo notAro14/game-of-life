@@ -1,7 +1,8 @@
+/* Globals */
 :root {
   --app-bg: #333;
   --cell-dead: var(--app-bg);
-  --cell-alive: white;
+  --cell-alive: rgb(205, 203, 203);
   --border: gray;
 }
 
@@ -24,4 +25,67 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+/* App.jsx */
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+  align-items: center;
+}
+.title {
+  color: rgb(228, 227, 227);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cell {
+  width: 15px;
+  height: 15px;
+  border-radius: 1px;
+  /* border: 1px solid var(--border); */
+}
+.cell:hover {
+  cursor: pointer;
+}
+@media screen and (max_width: 768px) {
+  .buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* Button.jsx */
+.btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  margin: 0.5rem;
+  color: white;
+  font-weight: bold;
+  outline: none;
+}
+.btn:hover {
+  cursor: pointer;
+}
+
+.primary {
+  background-color: dodgerblue;
+  border: 1px solid transparent;
+}
+.secondary {
+  border: 1px solid dodgerblue;
+  background-color: transparent;
+  color: dodgerblue;
+}
+.warning {
+  background-color: rgb(175, 175, 18);
+}
+.danger {
+  background-color: tomato;
+}
+.other {
+  background-color: #333;
 }
