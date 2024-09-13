@@ -122,7 +122,7 @@ function App() {
               }}
               className="cell"
               style={{
-                backgroundColor: col ? "yellow" : "rgb(22,22,82)",
+                backgroundColor: col ? "var(--cell-alive)" : "var(--cell-dead)",
               }}
             />
           ));

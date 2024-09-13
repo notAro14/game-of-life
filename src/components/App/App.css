@@ -16,7 +16,7 @@
 .cell {
   width: 15px;
   height: 15px;
-  border: 1px solid pink;
+  border: 1px solid (var--border);
 }
 .cell:hover {
   cursor: pointer;
